@@ -1,0 +1,95 @@
+:root {
+    --size: 256px;
+    --columnas: 4;
+    --colorBase: red;
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: marydale, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 125pt;
+}
+
+p {
+    font-family: marydale, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16pt;
+}
+
+#contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    background-color: azure;
+    width: 1024px;
+    height: 1024px;
+}
+
+#grid-contenedor {
+    display: grid;
+    grid-template-columns: repeat(var(--columnas), var(--size));
+    grid-template-rows: repeat(auto-fill, var(--size));
+}
+
+.celda {
+    background-color: var(--colorBase);
+    border: 1px dotted black;
+
+}
+
+#secccionUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(132, 224, 203); 
+    margin-top: 100px;
+    width: 1024px;
+    height: 256px;
+    border-radius: 30px;
+    border: 5px solid black;
+    text-align: center;
+}
+
+
+#borrar {
+    height: 50px;
+    width: 100px;
+    font-size: 16pt;
+    margin-left: 100px;
+    border-radius: 10px;
+}
+
+#crear {
+    height: 50px;
+    width: 100px;
+    font-size: 16pt;
+    margin-left: 100px;
+    border-radius: 10px;
+}
+
+#barra {
+    appearance: none;   /* reseteamos los  styles estilos css default */
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 100px;
+}
+
+#barra::-moz-range-thumb {
+    width: 25px;
+    height: 45px;
+    background-color: rgb(50, 164, 168);
+    cursor: pointer;
+  }

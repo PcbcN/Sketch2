@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo Intento Sketcher</title>
+    <link rel="stylesheet" href="estilos.css"></link>
+    <link rel="stylesheet" href="https://use.typekit.net/pea4crg.css">
+</head>
+<body>
+    <div><h1>Segundo intento Sketcher</h1></div>
+
+    <div id="contenedor"><div id="grid-contenedor"></div></div>
+    
+    <div id="secccionUser">
+        <button type="button" id="crear" onclick="crearTabla()">Crear</button>
+        <button type="button" id="borrar" onclick="borrarTabla(tabla)">Borrar</button>
+        <input type="range" value="4" min="2" max="16" step="2"  id="barra" oninput="dinamismo()"></input>
+        <p>Gradua el tamaño <br> del pincel!</p>
+    </div>
+</body>
+<script src="javascript.js"></script>
+</html>
