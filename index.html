@@ -11,14 +11,24 @@
 <body>
     <div><h1>Segundo intento Sketcher</h1></div>
 
+    <div id="secccionUser">
+
+        <div id="botones">   
+            <!--<button type="button" id="borrar" onclick="borrarTabla(tabla)">Borrar</button>-->
+            <input type="range" value="4" min="2" max="16" step="2"  id="barra" oninput="dinamismo()"></input>
+            <button type="button" id="crear" onclick="crearTabla()">Crear</button>
+        </div>
+        
+        <div id="instrucciones">
+            <p>Primero gradua <br> el tamaño del pincel...</p>
+            <p> ...y después pulsa aquí para <br> crear el canvas</p>
+            
+        </div>
+    </div>
+
     <div id="contenedor"><div id="grid-contenedor"></div></div>
     
-    <div id="secccionUser">
-        <button type="button" id="crear" onclick="crearTabla()">Crear</button>
-        <!--<button type="button" id="borrar" onclick="borrarTabla(tabla)">Borrar</button>-->
-        <input type="range" value="4" min="2" max="16" step="2"  id="barra" oninput="dinamismo()"></input>
-        <p>Gradua el tamaño <br> del pincel!</p>
-    </div>
+
 </body>
 <script src="javascript.js"></script>
 </html>
