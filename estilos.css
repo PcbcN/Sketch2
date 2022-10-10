@@ -1,7 +1,7 @@
 :root {
     --size: 256px;
     --columnas: 4;
-    --colorBase: red;
+    --colorBase: rgb(227, 179, 48);
 }
 
 
