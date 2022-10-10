@@ -7,7 +7,7 @@ let columnas = estilos.getPropertyValue("--columnas"); //La variable columnas de
 let colorBase = estilos.getPropertyValue("--colorBase"); //La variable colorBase del css
 let barraInput = document.getElementById("barra").value; //El input del slider range
 let numDiv = barraInput * barraInput; //calculamos de base cuantos divs hay que crear multiplicando las columnas por sí mismas
-
+document.getElementById("p1").innerHTML = barraInput; 
 /* Funciones para ayudar, actualizan el numDiv en base al input 
 y borran los childs de la tabla para resetear. 
 Después está tambien la funcion para pintar celdas*/
@@ -55,7 +55,8 @@ function crearTabla(){
 
 function dinamismo(){
     borrarTabla(tabla);
-    barraInput = document.getElementById("barra").value; 
+    barraInput = document.getElementById("barra").value;
+    document.getElementById("p1").innerHTML = barraInput; 
     if(barraInput == 2) {
             cssVar.style.setProperty("--columnas", "2");
             cssVar.style.setProperty("--size", "512px"); }
