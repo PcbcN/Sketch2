@@ -6,14 +6,32 @@ let size = estilos.getPropertyValue("--size"); //La variable size del css
 let columnas = estilos.getPropertyValue("--columnas"); //La variable columnas del css
 let colorBase = estilos.getPropertyValue("--colorBase"); //La variable colorBase del css
 let barraInput = document.getElementById("barra").value; //El input del slider range
-let num = barraInput * barraInput; //calculamos de base cuantos divs hay que crear multiplicando las columnas por sí mismas
+let numDiv = barraInput * barraInput; //calculamos de base cuantos divs hay que crear multiplicando las columnas por sí mismas
 
+/* Funciones para ayudar, actualizan el numDiv en base al input 
+y borran los childs de la tabla para resetear. 
+Después está tambien la funcion para pintar celdas*/
+
+function contarColumnas(){
+    numDiv = barraInput * barraInput;
+}
+
+function borrarTabla(parent){
+    while (parent.firstChild){
+        parent.removeChild(parent.firstChild);}
+}
+
+function pintando(e){
+    console.log(this);
+    this.style.setProperty("--colorBase", "#37839b");
+}
 
 
 /* Funcion para crear tabla con variables*/
 function crearTabla(){
-    borrarTabla(parent)
-    for (let i = 0; i < num; i++) {
+    borrarTabla(tabla);
+    contarColumnas();
+    for (let i = 0; i < numDiv; i++) {
         const celda = document.createElement("div");
         tabla.appendChild(celda).setAttribute("class", "celda");
     }
@@ -24,19 +42,20 @@ function crearTabla(){
     for (let i = 0; i < arr.length; i++){
         arr[i].id = i;
     }
+
+    /*Creamos la const con todas las celdas y el event listener para pintar*/
+    const pintar = document.querySelectorAll(".celda");
+
+    pintar.forEach((celda) => {
+        celda.addEventListener("mouseover", pintando);
+        });
 }
 
-function contarColumnas(){
-    num = barraInput * barraInput;
-}
-
-function borrarTabla(parent){
-    while (parent.firstChild){
-        parent.removeChild(parent.firstChild);}
-}
 
 
 function dinamismo(){
+    borrarTabla(tabla);
+    barraInput = document.getElementById("barra").value; 
     if(barraInput == 2) {
             cssVar.style.setProperty("--columnas", "2");
             cssVar.style.setProperty("--size", "512px"); }
@@ -61,8 +80,10 @@ function dinamismo(){
                                  else if (barraInput == 16) {
                                         cssVar.style.setProperty("--columnas", "16");
                                         cssVar.style.setProperty("--size", "64px");}
-        contarColumnas();
+                                        else{console.log("Error!");}
     }
+
+
 
 
 
